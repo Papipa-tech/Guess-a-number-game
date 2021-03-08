@@ -4,9 +4,10 @@
 
 // Izbaciva random broj od 1-20
 let secretNumber = Math.trunc(Math.random() * 20) + 1;
-//document.querySelector('.number').textContent = secretNumber;
+document.querySelector('.number').textContent = secretNumber;
 
 let score = 5;
+let highscore = 0;
 
 document.querySelector('.check').addEventListener('click', function() {
     const guess = Number(document.querySelector('.guess').value);
@@ -34,6 +35,13 @@ document.querySelector('.check').addEventListener('click', function() {
 
         // Minja '?' kad se pogodi random broj
         document.querySelector('.number').textContent = `🎊🎉 Congratulations (${secretNumber}) is correct number! 🎉🎊` ;
+
+        // Highscore
+        if(score > highscore) {
+            highscore = score;
+
+            document.querySelector('.highscore').textContent = highscore;
+        }
 
 
         // Kad je unos prevelik
@@ -91,6 +99,8 @@ document.querySelector('.check').addEventListener('click', function() {
        
     }
 });
+
+
 
 document.querySelector('.again').addEventListener('click', function() {
 
