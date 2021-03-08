@@ -2,8 +2,10 @@
 
 // PROJECT #1: Guess my number!
 
-const secretNumber = Math.trunc(Math.random() * 20) + 1;
+// Izbaciva random broj od 1-20
+let secretNumber = Math.trunc(Math.random() * 20) + 1;
 //document.querySelector('.number').textContent = secretNumber;
+
 let score = 5;
 
 document.querySelector('.check').addEventListener('click', function() {
@@ -47,6 +49,7 @@ document.querySelector('.check').addEventListener('click', function() {
             '🎮🧨 Game Over!';
             document.querySelector('.score').textContent = 0;
 
+
              // Minja boju bodya kad izgubi
         document.querySelector('body').style.backgroundColor = 'red';
 
@@ -55,6 +58,9 @@ document.querySelector('.check').addEventListener('click', function() {
 
             // Ako dode do nule onda minja '?' u Game Over!
             document.querySelector('.number').textContent = '🧨🎮 Game Over! 🎮🧨';
+
+            // Minja boju teksta u crveno
+            document.querySelector('.number').style.color = 'red';
         }
        
         // Kad je unos premal
@@ -78,7 +84,46 @@ document.querySelector('.check').addEventListener('click', function() {
 
              // Ako dode do nule onda minja '?' u Game Over!
              document.querySelector('.number').textContent = '🧨🎮 Game Over! 🎮🧨';
+
+             // Minja boju teksta u crveno
+            document.querySelector('.number').style.color = 'red';
         }
        
     }
+});
+
+document.querySelector('.again').addEventListener('click', function() {
+
+    secretNumber = Math.trunc(Math.random() * 20) + 1;
+    
+    score = 5;
+
+    // Da vrati broj pokusaja na pocetak (5)
+    document.querySelector('.score').textContent = 5;
+
+    // Da vrati pocetni background color
+    document.querySelector('body').style.backgroundColor = '#222';
+
+     // Da vrati '?' na pocetak
+     document.querySelector('.number').textContent = '?';
+
+     // Da vrati font '?'
+     document.querySelector('.number').style.fontSize = '6rem';
+
+     // Da vrati boju '?'
+     document.querySelector('.number').style.color = '#333';
+ 
+
+    // Da vrati sirinu poruke na pocetak
+    document.querySelector('.number').style.width = '15rem';
+
+    // Da vrati poruku start guessing
+    document.querySelector('.message').textContent = 'Start guessing...';
+
+    // Da ponisti sve unose
+    document.querySelector('.guess').value = '';
+
+
+
+    
 });
