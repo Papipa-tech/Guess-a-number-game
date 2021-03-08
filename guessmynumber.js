@@ -4,7 +4,7 @@
 
 // Izbaciva random broj od 1-20
 let secretNumber = Math.trunc(Math.random() * 20) + 1;
-document.querySelector('.number').textContent = secretNumber;
+//document.querySelector('.number').textContent = secretNumber;
 
 let score = 5;
 let highscore = 0;
